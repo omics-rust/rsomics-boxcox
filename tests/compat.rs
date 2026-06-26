@@ -2,9 +2,9 @@
 //!
 //! `tests/golden/*.tsv` are the inputs; `tests/golden/golden.json` holds scipy's
 //! reference outputs, generated once with scipy 1.17.1 (BSD-3) and committed, so
-//! this test needs no Python at run time. The transform is checked bit-exact for
-//! a fixed lambda; the log-likelihood to 1e-12; the MLE/Pearson optimal lambda
-//! to 1e-6 (an iterative optimizer's path tolerance).
+//! this test needs no Python at run time. The transform and log-likelihood are
+//! checked to 1e-12 (`x.powf(λ)` is not bit-portable across architectures); the
+//! MLE/Pearson optimal lambda to 1e-6 (an iterative optimizer's path tolerance).
 
 use std::path::PathBuf;
 
